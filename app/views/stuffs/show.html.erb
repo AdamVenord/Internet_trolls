@@ -1,0 +1,5 @@
+<h1><%= @board.name %> - <%= @stuff.name %></h1>
+<p><%= @stuff.body %></p>
+<%= link_to 'Edit Task', edit_board_stuff_path([@board, @stuff]) %>
+<%= link_to 'Delete Task', [@board, @stuff], method: :delete %>
+<%= link_to 'Back To Stuffs', board_stuffs_path(@board) %>

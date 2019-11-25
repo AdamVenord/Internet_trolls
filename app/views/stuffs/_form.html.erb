@@ -1,0 +1,10 @@
+<h1><%= @stuff.id ? 'Edit Stuff' : 'Create Stuff' %></h1>
+<hr />
+<%= form_for [@board, @stuff] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.label :body %>
+  <%= f.text_area :body, required: true %>
+  <%= f.submit %>
+<% end %>

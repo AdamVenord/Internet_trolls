@@ -1,0 +1,25 @@
+<h1 class="ui header">Le Boards</h1>
+<%= link_to 'New Board', new_board_path %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+  <% @boards.each do |board| %>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
+      <div class="column">
+        <div class="ui inverted segment">
+          <%= link_to "#{board.name}", board, class: "header" %>
+        </div>
+            <div class="extra content">
+              <div class="ui two buttons">
+            <div class="ui basic purple button inverted">
+              <%= link_to 'Edit', edit_board_path(board) %>
+            </div>
+            <div class="ui basic red button inverted">
+               <%= link_to "Destroy", board_path(board), method: :delete, data: { confirm: 'Do you really wanna delete me? ಥ_ಥ' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

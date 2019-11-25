@@ -1,0 +1,12 @@
+<h1><%= @board.name %> - <%= @stuff.name %></h1>
+<p><%= @stuff.body %></p>
+<h2>Task</h2>
+
+<% @stuff.tasks.each do |task| %>
+  <%= render 'tasks/task', { task: task } %>
+<% end %>
+
+<hr />
+<%= link_to 'Edit Task', edit_board_stuff_path([@board, @stuff]) %>
+<%= link_to 'Delete Task', [@board, @stuff], method: :delete %>
+<%= link_to 'Return To Stuff', board_stuffs_path(@board) %>

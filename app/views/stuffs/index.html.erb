@@ -1,0 +1,9 @@
+<h1>Choose Your Stuufffffs</h1>
+<%= link_to 'Create Stuffff', new_board_stuff_path(@board) %>
+<ul>
+  <% @stuffs.each do |stuff| %>
+    <li><%= link_to stuff.name, [@board, stuff] %></li>
+  <% end %>
+  <
+  <%= link_to 'Go Back', board_path(@board) %>
+</ul>

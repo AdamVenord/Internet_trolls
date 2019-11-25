@@ -1,0 +1,12 @@
+<div class="ui list">
+  <div class="content">
+    <p class="header">
+      <%= @board.name %>
+    </p>
+  </div>
+  <div class="extra content">
+    <%= link_to 'View', board_stuffs_path(@board) %>
+    <%= link_to 'Edit', edit_board_path(@board) %> |
+    <%= link_to 'Back', boards_path %>
+  </div>
+</div>
